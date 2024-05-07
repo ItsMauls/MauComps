@@ -11,7 +11,7 @@ export const SearchBar = ({
     return (
         <div className={cn('flex items-center bg-white rounded-lg', className)}>
             {leftIcon && (
-                <span className="pl-2">
+                <span className="pl-2 cursor-pointer">
                     {leftIcon}
                 </span>
             )}
@@ -24,10 +24,10 @@ export const SearchBar = ({
                 id={id}
             />
             {rightIcon ? (
-                <span className="pr-2">
+                <span className="pr-2 cursor-pointer">
                     {rightIcon}
                 </span>
-            ): <CiSearch className="text-[20px] font-bold text-gray-500"/>}
+            ): <CiSearch className="text-[20px] cursor-pointer font-bold text-gray-500"/>}
         </div>
     )
 }

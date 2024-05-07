@@ -3,22 +3,26 @@ import React, { useEffect, useState } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import { cn } from '@/lib/cn';
 import { FaCaretDown } from 'react-icons/fa';
+import Link from 'next/link';
 
 const AccordionMenu = ({
     idx,
     trigger,
     subMenu,
     icon,
-    className
+    className,
+    link
 }) => {
     const [focusedIndex, setFocusedIndex] = useState(null)
-
+    const inDashboard = link === '/dashboard'
+    console.log(link, 'lll')
     useEffect(() => {
         setFocusedIndex(0)
     }, [])
 
     return (
         <Accordion.Root
+          key={idx}
             className={cn('bg-mauve w-[300px]', className)}
             type="single"        
             collapsible
@@ -26,14 +30,24 @@ const AccordionMenu = ({
         > 
             <AccordionItem value={`item-${idx}`}>
             <AccordionTrigger subMenu={subMenu}>
-                <div className='flex gap-x-3 items-center'>
-                    <span className='text-2xl group group-focus:text-green-600'>
-                        {icon}
-                    </span>
-                    {trigger}
-                </div>
+              <Link href={inDashboard ? '/' : ''}>
+                  <div className='flex gap-x-3 items-center'>
+                      <span className='text-2xl group group-focus:text-green-600'>
+                          {icon}
+                      </span>
+                      {trigger}
+                  </div>
+                </Link>
             </AccordionTrigger>
-            {subMenu.map((val, idx) => <AccordionContent setFocusedIndex={() => setFocusedIndex(idx)} isHovered={focusedIndex === idx} key={idx}>{val.name}</AccordionContent>)}
+            {subMenu.map((val, idx) => {
+              return (
+                <>
+                <Link key={idx} href={`${link}${val.link}`}>
+                  <AccordionContent setFocusedIndex={() => setFocusedIndex(idx)} isHovered={focusedIndex === idx} key={idx}>{val.name}</AccordionContent>
+                </Link>
+                </>
+              )
+            })}
             
             </AccordionItem>
     
