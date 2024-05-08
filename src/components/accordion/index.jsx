@@ -15,7 +15,7 @@ const AccordionMenu = ({
 }) => {
     const [focusedIndex, setFocusedIndex] = useState(null)
     const inDashboard = link === '/dashboard'
-    console.log(link, 'lll')
+
     useEffect(() => {
         setFocusedIndex(0)
     }, [])

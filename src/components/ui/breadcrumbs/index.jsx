@@ -1,7 +1,7 @@
 'use client'
 import { VscListFlat } from "react-icons/vsc";
 import { IoMdArrowDropright } from "react-icons/io";
-import { useModifiedPathName } from "@/app/hooks/useGetCustomPathName";
+import { useModifiedPathName } from "@/hooks/useGetCustomPathName";
 
 export const BreadCrumbs = () => {
     const { firstPath, secondPath } = useModifiedPathName()

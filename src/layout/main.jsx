@@ -7,8 +7,8 @@ export const MainLayout = ({children}) => {
             <Sidebar />
             <div className="flex flex-col flex-grow">
                 <Navbar />
-                <main className="flex-grow p-8">
-                    {children}
+                <main className="flex-grow px-8 py-4">                    
+                        {children}
                 </main>
             </div>
         </div>
