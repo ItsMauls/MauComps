@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export const BranchInfo = () => {
     return (
-        <section className="flex justify-center mr-20 mt-2 items-center mx-auto">   
+        <section className="flex justify-center mr-20 mt-4 items-center mx-auto">   
             <div className="mx-4">
                 <Image 
                     alt="branch"

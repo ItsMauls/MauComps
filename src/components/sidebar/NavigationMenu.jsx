@@ -6,7 +6,6 @@ export const NavigationMenu = () => {
         <>
         {menu.map((val, idx) => {
             const subMenu = val.subMenu
-            console.log(idx, 'sss')
             return (
                 <AccordionMenu
                     icon={val.logo}
