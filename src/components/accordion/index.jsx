@@ -48,7 +48,7 @@ const AccordionMenu = ({
                 </>
               )
             })}
-            
+        
             </AccordionItem>
     
         </Accordion.Root>
@@ -67,6 +67,7 @@ const AccordionItem = React.forwardRef(({ children, className, ...props }, forwa
     {children}
   </Accordion.Item>
 ));
+AccordionItem.displayName = AccordionItem
 
 const AccordionTrigger = React.forwardRef(({ children, subMenu, className, ...props }, forwardedRef) => (
   <Accordion.Header className="flex">
@@ -88,6 +89,7 @@ const AccordionTrigger = React.forwardRef(({ children, subMenu, className, ...pr
     </Accordion.Trigger>
   </Accordion.Header>
 ));
+AccordionTrigger.displayName = AccordionTrigger
 
 const AccordionContent = React.forwardRef(({ children, setFocusedIndex,className, isHovered, ...props }, forwardedRef) => (
   <Accordion.Content
@@ -108,5 +110,6 @@ const AccordionContent = React.forwardRef(({ children, setFocusedIndex,className
     </div>
   </Accordion.Content>
 ));
+AccordionContent.displayName = AccordionContent
 
 export default AccordionMenu;

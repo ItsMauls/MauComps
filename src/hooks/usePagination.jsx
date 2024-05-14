@@ -17,14 +17,14 @@ export const usePagination = ({
         setCurrentPage(currentPage - 1);
         router.push(`?table-page=${currentPage - 1}`)
     }
-  }, [currentPage]);
+  }, [currentPage, router]);
   
   const handleNextPage = useCallback(() => {
     if (currentPage < totalPages) {
         setCurrentPage(currentPage + 1);
         router.push(`?table-page=${currentPage + 1}`)
     }
-  }, [currentPage, totalPages]);
+  }, [currentPage, totalPages, router]);
 
   const renderPageNumbers = () => {
     const pageNumbers = [];
