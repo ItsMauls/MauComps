@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col flex-grow">
                 <Navbar />
                 <Header /> 
-                <main className="flex-grow px-8 py-4">                    
+                <main className="flex-grow px-8 py-4 overflow-x-scroll">                    
                   {children}
                 </main>
             </div>

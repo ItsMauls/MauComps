@@ -9,7 +9,7 @@ export const useModifiedPathName = () => {
     
     const splittedPath = pathName.split('/')
     const tempFirstPath = splittedPath[1].split('')[0].toUpperCase() + splittedPath[1].slice(1)
-    const firstPath = tempFirstPath
+    const firstPath = tempFirstPath.replace('-', ' ')
     
     const tempSecondPath = splittedPath.slice(2).join('-').replace(/-/g, ' ')
     const separatedWords = tempSecondPath.split(' ')

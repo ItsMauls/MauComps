@@ -1,7 +1,8 @@
-import { FaNewspaper, FaShoppingCart, FaWallet } from "react-icons/fa";
+import { FaNewspaper } from "react-icons/fa";
 import { FaClipboardUser } from "react-icons/fa6";
 import { RiInboxArchiveFill } from "react-icons/ri";
 import { MdSpaceDashboard } from "react-icons/md";
+import { BsClipboard2DataFill } from "react-icons/bs";
 
 export const menu = [
     {
@@ -11,87 +12,47 @@ export const menu = [
         logo : <MdSpaceDashboard />,
     },
     {
-        name : 'Display',
-        link : '/display',
-        logo : <RiInboxArchiveFill />,
-        
-        subMenu : [
-            {
-                name : 'Data Barang',
-                link : '/data-barang'
-            },
-            {
-                name : 'Master Departemen',
-                link : '/master-departemen'
-            }
-        ]
+        name : 'Data Mapping',
+        link : '/data-mapping',
+        logo : <BsClipboard2DataFill />,
+        subMenu : []
     },
     {
-        name : 'Laporan',
-        link : '/laporan',
+        name : 'Report',
+        link : '/report',
         logo : <FaNewspaper />,
         subMenu : [
             {
-                name : 'Penjualan Barang',
-                link : '/penjualan-barang'
+                name : 'All Stock',
+                link : '/all-stock'
             },
             {
-                name : 'Penjualan Barang Tertentu',
-                link : '/penjualan-barang-tertentu'
+                name : 'Selling Out',
+                link : '/selling-out'
             },
             {
-                name : 'Pembelian Barang',
-                link : '/pembelian-barang'
+                name : 'Stock Saat Ini',
+                link : '/stock-saat-ini'
             },
             {
-                name : 'Tidak Ada Penjualan',
-                link : '/tidak-ada-penjualan'
+                name : 'Stock Berjalan',
+                link : '/stock-berjalan'
             },
         ]
     },
     {
-        name : 'Transaksi',
-        link : '/transaksi',
-        logo : <FaWallet />,
-        subMenu : [
-            {
-                name : 'Data Barang',
-                link : '/data-barang'
-            },
-            {
-                name : 'Master Departemen',
-                link : '/master-departemen'
-            }
-        ]
-    },
-    {
-        name : 'HO System',
-        link : '/ho-system',
+        name : 'Master Data',
+        link : '/master',
         logo : <FaClipboardUser />,
         subMenu : [
             {
-                name : 'Data Barang',
-                link : '/data-barang'
+                name : 'Master Role',
+                link : '/role'
             },
             {
-                name : 'Master Departemen',
-                link : '/master-departemen'
+                name : 'Master User',
+                link : '/user'
             }
         ]
-    },
-    {
-        name : 'Service Level',
-        link : '/service-level',
-        logo : <FaShoppingCart />,
-        subMenu : [
-            {
-                name : 'Data Barang',
-                link : '/data-barang'
-            },
-            {
-                name : 'Master Departemen',
-                link : '/master-departemen'
-            }
-        ]
-    },
+    }
 ]
