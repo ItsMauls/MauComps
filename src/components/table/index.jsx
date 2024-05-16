@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { WithPagination } from './WithPagination'
 import { SearchBar } from '../ui/Searchbar'
 import { CiSearch } from 'react-icons/ci'
+import { Limiter } from '../limiter'
 
 
 export const Table = ({
@@ -30,14 +31,17 @@ export const Table = ({
 
     return (
         <>
-        {withSearchBar &&
-            <SearchBar
-                leftIcon={<CiSearch className="text-2xl" />}
-                rightIcon={<div className="border border-gray-300 font-semibold px-1 rounded-md">\</div>}
-                className={cn("w-[410px] px-4 border-2 my-4 border-gray-100 font-normal", searchBarClassName)}
-                id="barcodeInput"
-                placeholder="Cari atau Input Barcode disini"
-            /> }
+            <div className='flex items-center justify-between'>
+                {withSearchBar &&
+                    <SearchBar
+                        leftIcon={<CiSearch className="text-2xl" />}
+                        rightIcon={<div className="border border-gray-300 font-semibold px-1 rounded-md">\</div>}
+                        className={cn("w-[410px] px-4 border-2 my-4 border-gray-100 font-normal", searchBarClassName)}
+                        id="barcodeInput"
+                        placeholder="Cari atau Input Barcode disini"
+                    /> }
+                    <Limiter />
+            </div>
             <div className="bg-white rounded-xl drop-shadow-sm h-5/6">
 
                 <table className='w-full'>
@@ -64,7 +68,6 @@ export const Table = ({
                         <tr 
                             className={cn(idx % 2 === 0 ? 'bg-gray-50' : 'bg-white',
                                 'border-b-gray-200 border-b text-gray-500 ',
-                                'hover:bg-blue-100 hover:text-black',
                                 rowClassName
                             )}
                             key={row.id}>

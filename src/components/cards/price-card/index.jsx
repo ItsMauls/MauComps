@@ -7,7 +7,7 @@ export const PriceCard = ({ data }) => {
           <div
             key={index}
             className={cn(
-                `bg-white p-4 rounded-lg drop-shadow-sm transition duration-300`,
+                `bg-white p-3 rounded-lg drop-shadow-sm transition duration-300`,
                 item.hoverColor
             )}
           >

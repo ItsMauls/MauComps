@@ -1,6 +1,7 @@
 'use client'
 
 const { createColumnHelper } = require("@tanstack/react-table")
+import { FaSort } from "react-icons/fa";
 
 const columnHelper = createColumnHelper()
 
@@ -33,31 +34,31 @@ export const defaultData = [
 
 export const columns = [
   columnHelper.accessor('kdCab', {
-    header : () => <span>Kd Cab </span>,
+    header : () => <span className="flex items-center gap-x-3">Kd Cab <FaSort /></span>,
     cell: info => info.getValue(),
     footer: info => info.column.id,
   }),
   columnHelper.accessor(row => row.namaCabang, {
     id: 'namaCabang',
     cell: info => <i>{info.getValue()}</i>,
-    header: () => <span>Nama Cabang</span>,
+    header: () => <span className="flex items-center gap-x-3">Nama Cabang <FaSort /></span>,
     footer: info => info.column.id,
   }),
   columnHelper.accessor('stock', {
-    header: () => 'Stock',
+    header: () => <span className="flex items-center gap-x-3">Stock <FaSort /></span>,
     cell: info => info.renderValue(),
     footer: info => info.column.id,
   }),
   columnHelper.accessor('jatahHariIni', {
-    header: () => <span>Jatah Hari Ini</span>,
+    header: () => <span className="flex items-center gap-x-3">Jatah Hari Ini <FaSort /></span>,
     footer: info => info.column.id,
   }),
   columnHelper.accessor('tanggal', {
-    header: 'Tanggal',
+    header: <span className="flex items-center gap-x-3">Tanggal <FaSort /></span>,
     footer: info => info.column.id,
   }),
   columnHelper.accessor('noTelp', {
-    header: 'No Telepon',
+    header: <span className="flex items-center gap-x-3">No Telepon <FaSort /></span>,
     footer: info => info.column.id,
   })
 ]
