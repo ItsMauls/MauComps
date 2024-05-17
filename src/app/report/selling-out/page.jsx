@@ -12,8 +12,9 @@ export default function SellingOut() {
     return (
         <>
             <Table
-                headerClassName={'bg-teal-500 my text-white bg-opacity-0 rounded-t-sm border-r border-white border-opacity-50 font-medium text-sm'}
-                tableClassName={'my-4 rounded-2xl bg-teal-500'}
+                headerClassName={'my-2 text-white bg-opacity-0 rounded-t-sm font-medium text-sm'}
+                tableClassName={'my-4 rounded-2xl bg-blue-600'}
+                rowClassName={'bg-white'}
                 columns={inputColumns}
                 defaultData={data}
             />
@@ -27,7 +28,7 @@ export default function SellingOut() {
                     id="barcodeInput"
                     placeholder={'Cari Disini'}
                 /> 
-                <Button icon={<GoDownload />} className="ml-auto bg-teal-500 text-white">Export</Button>
+                <Button icon={<GoDownload />} className="ml-auto bg-teal-600 hover:bg-teal-700 text-white">Export</Button>
             </div>
             <Table
                 tableClassName={'h-5/6'}

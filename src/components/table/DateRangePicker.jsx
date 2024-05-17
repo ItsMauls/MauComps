@@ -11,6 +11,7 @@ const DateRangeSelector = () => {
   const modalRef = useRef(null);
 
   const handleSelect = (ranges) => {
+    console.log(ranges, 'ranges');
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
     setShowModal(false);

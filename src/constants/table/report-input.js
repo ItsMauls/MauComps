@@ -1,4 +1,5 @@
 'use client'
+import { Button } from "@/components/ui/Button";
 import { createColumnHelper } from "@tanstack/react-table";
 
 const columnHelper = createColumnHelper()
@@ -96,6 +97,6 @@ export const data = [
     }),
     columnHelper.accessor('action', {
       header: () => <span className="flex items-center gap-x-3">Action</span>,
-      cell: info => <button className="bg-blue-600 text-white p-2 px-4 rounded-lg">Tampilkan</button>,
+      cell: info => <Button className="bg-teal-600 hover:bg-teal-700 text-white p-2 px-4 rounded-lg">Tampilkan</Button>,
     }),
   ];
