@@ -30,12 +30,60 @@ export const defaultData = [
         tanggal: '2024-05-03',
         noTelp : 100
     },
+    {
+        kdCab : 4, 
+        namaCabang: 'Apotek Roxy Juanda',
+        stock: 0,
+        jatahHariIni: 0,        
+        tanggal: '2024-05-03',
+        noTelp : 100
+    },
+    {
+        kdCab : 5, 
+        namaCabang: 'Apotek Roxy Juanda',
+        stock: 0,
+        jatahHariIni: 0,        
+        tanggal: '2024-05-03',
+        noTelp : 100
+    },
+    {
+        kdCab : 6, 
+        namaCabang: 'Apotek Roxy Juanda',
+        stock: 0,
+        jatahHariIni: 0,        
+        tanggal: '2024-05-03',
+        noTelp : 100
+    },
+    {
+        kdCab : 7, 
+        namaCabang: 'Apotek Roxy Juanda',
+        stock: 0,
+        jatahHariIni: 0,        
+        tanggal: '2024-05-03',
+        noTelp : 100
+    },
+    {
+        kdCab : 8, 
+        namaCabang: 'Apotek Roxy Juanda',
+        stock: 0,
+        jatahHariIni: 0,        
+        tanggal: '2024-05-03',
+        noTelp : 100
+    },
+    {
+        kdCab : 9, 
+        namaCabang: 'Apotek Roxy Juanda',
+        stock: 0,
+        jatahHariIni: 0,        
+        tanggal: '2024-05-03',
+        noTelp : 100
+    },
   ]
 
 export const columns = [
   columnHelper.accessor('kdCab', {
-    header : () => <span className="flex items-center gap-x-3">Kd Cab <FaSort /></span>,
-    cell: info => info.getValue(),
+    header : () => <span className="flex items-center text-center mx-auto gap-x-3">Kd Cab <FaSort /></span>,
+    cell: info => <h1 className="text-center mx-auto">{info.getValue()}</h1>,
     footer: info => info.column.id,
   }),
   columnHelper.accessor(row => row.namaCabang, {

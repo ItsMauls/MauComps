@@ -6,6 +6,7 @@ export const SearchBar = ({
     className,
     rightIcon,
     leftIcon,
+    inputClassName,
     id
 }) => {
     return (
@@ -18,7 +19,8 @@ export const SearchBar = ({
             <input
                 className={cn('flex-1 w-full p-2 outline-none rounded-md', 
                              leftIcon ? 'pl-8' : 'pl-2', 
-                             rightIcon ? 'pr-8' : 'pr-2')}
+                             rightIcon ? 'pr-8' : 'pr-2',
+                            inputClassName)}
                 type="search"
                 placeholder={placeholder}
                 id={id}

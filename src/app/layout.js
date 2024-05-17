@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <Sidebar />
             <div className="flex flex-col flex-grow">
                 <Navbar />
-                <main className="flex-grow px-8 py-4 overflow-x-scroll">                    
+                <main className="flex-grow px-8 py-4 overflow-x-auto">                    
                   {children}
                 </main>
             </div>
