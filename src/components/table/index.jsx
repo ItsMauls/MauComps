@@ -11,7 +11,9 @@ import { WithPagination } from './WithPagination'
 import { SearchBar } from '../ui/Searchbar'
 import { CiSearch } from 'react-icons/ci'
 import { Limiter } from '../limiter'
-import DateRangeSelector, { SortByPeriods } from './DateRangePicker'
+import DateRangeSelector from './DateRangePicker'
+import { Button } from '../ui/Button'
+import { GoDownload } from 'react-icons/go'
 
 
 export const Table = ({
@@ -25,7 +27,10 @@ export const Table = ({
     tableClassName,
     limiter,
     searchBarPlaceholder,
-    sortByDate
+    sortByDate,
+    exportButton,
+    exportButtClassName,
+    sortByDateDefaultStyle
 }) => {
     const [data, _setData] = useState([...defaultData])
     const table = useReactTable({
@@ -37,17 +42,21 @@ export const Table = ({
     return (
         <>
             <div className='flex items-center justify-between'>
-                {withSearchBar &&
-                        <SearchBar
-                            leftIcon={<CiSearch className="text-2xl" />}
-                            rightIcon={<div className="border border-gray-300 font-semibold px-1 rounded-md">\</div>}
-                            className={cn("w-[410px] px-4 border-2 my-4 border-gray-100 font-normal", searchBarClassName)}
-                            id="barcodeInput"
-                            placeholder={searchBarPlaceholder}
-                        /> }
-                    {limiter && <Limiter />}
-                    
-                    {sortByDate && <DateRangeSelector />}
+                <div className='flex items-center gap-x-4'>
+                        {withSearchBar &&
+                                <SearchBar
+                                    leftIcon={<CiSearch className="text-2xl" />}
+                                    rightIcon={<div className="border border-gray-300 font-semibold px-1 rounded-md">\</div>}
+                                    className={cn("w-[410px] px-4 border-2 my-4 border-gray-100 font-normal", searchBarClassName)}
+                                    id="barcodeInput"
+                                    placeholder={searchBarPlaceholder}
+                                /> }
+                                {sortByDate && <DateRangeSelector defaultStyle={sortByDateDefaultStyle}/>}
+                        </div>
+                        <div className='flex gap-x-5'>
+                            {limiter && <Limiter />}
+                            {exportButton && <Button icon={<GoDownload />} className={cn('bg-teal-600 hover:bg-teal-700 text-white', exportButtClassName)}>Export</Button>}
+                        </div>
             </div>
             <div className={cn("bg-white rounded-xl drop-shadow-sm", tableClassName)} >
 

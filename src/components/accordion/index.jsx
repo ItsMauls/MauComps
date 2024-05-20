@@ -32,7 +32,7 @@ const AccordionMenu = ({
             <AccordionTrigger subMenu={subMenu}>
               <Link href={inDashboard ? '/' : ''}>
                   <div className='flex gap-x-3 items-center'>
-                      <span className='text-2xl group group-focus:text-green-600'>
+                      <span className='text-xl group group-focus:text-green-600'>
                           {icon}
                       </span>
                       {trigger}
@@ -103,7 +103,7 @@ const AccordionContent = React.forwardRef(({ children, setFocusedIndex,className
     ref={forwardedRef}
   >
     <div className={cn(
-        "py-[15px] px-5 cursor-pointer data-[state=open]:hover:bg-gray-100 hover:rounded-lg my-1",
+        "py-[15px] px-5 cursor-pointer data-[state=open]:hover:bg-gray-100 hover:rounded-lg",
         isHovered ? 'bg-gray-100 rounded-lg' : 'hover:bg-gray-200'
     )}>
         {children}

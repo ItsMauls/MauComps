@@ -18,7 +18,7 @@ export default function SellingOut() {
                 columns={inputColumns}
                 defaultData={data}
             />
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-4 mt-12">
                 <DateRangeSelector />
                 <SearchBar
                     leftIcon={<CiSearch className="text-xl" />}

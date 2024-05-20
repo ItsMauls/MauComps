@@ -35,6 +35,10 @@ export const menu = [
                 link : '/stock-saat-ini'
             },
             {
+                name : 'Stock Backdate',
+                link : '/stock-backdate'
+            },
+            {
                 name : 'Stock Berjalan',
                 link : '/stock-berjalan'
             },
