@@ -14,6 +14,7 @@ import { Limiter } from '../limiter'
 import DateRangeSelector from './DateRangePicker'
 import { Button } from '../ui/Button'
 import { GoDownload } from 'react-icons/go'
+import { GiSettingsKnobs } from "react-icons/gi";
 
 
 export const Table = ({
@@ -30,7 +31,10 @@ export const Table = ({
     sortByDate,
     exportButton,
     exportButtClassName,
-    sortByDateDefaultStyle
+    sortByDateDefaultStyle,
+    filter,
+    customRightButton,
+    customRightButtonLabel
 }) => {
     const [data, _setData] = useState([...defaultData])
     const table = useReactTable({
@@ -52,10 +56,12 @@ export const Table = ({
                                     placeholder={searchBarPlaceholder}
                                 /> }
                                 {sortByDate && <DateRangeSelector defaultStyle={sortByDateDefaultStyle}/>}
+                                {filter && <Button className={'bg-white border text-gray-600 font-medium border-gray-300 py-2 px-4'}> <GiSettingsKnobs /> Filters </Button>}
                         </div>
                         <div className='flex gap-x-5'>
                             {limiter && <Limiter />}
                             {exportButton && <Button icon={<GoDownload />} className={cn('bg-teal-600 hover:bg-teal-700 text-white', exportButtClassName)}>Export</Button>}
+                            {customRightButton && <Button className={cn('bg-teal-600 hover:bg-teal-700 text-white', exportButtClassName)}>{customRightButtonLabel}</Button>}
                         </div>
             </div>
             <div className={cn("bg-white rounded-xl drop-shadow-sm", tableClassName)} >

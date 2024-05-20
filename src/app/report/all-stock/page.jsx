@@ -13,11 +13,15 @@ export default function AllStock() {
                 searchBarPlaceholder={"Cari atau Input Barcode disini"}
                 searchBarClassName={'text-gray-500 '}
                 tableClassName={'h-5/6'}
+                headerClassName={'rounded-lg'}
                 withSearchBar
                 defaultData={defaultData}
                 columns={columns}
-                // pagination
+                pagination
                 limiter
+                customRightButton
+                customRightButtonLabel={'Stock All Cabang'}
+                exportButtClassName={'px-3'}
             />
         </>
     )

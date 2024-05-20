@@ -103,7 +103,7 @@ const AccordionContent = React.forwardRef(({ children, setFocusedIndex,className
     ref={forwardedRef}
   >
     <div className={cn(
-        "py-[15px] px-5 cursor-pointer data-[state=open]:hover:bg-gray-100 hover:rounded-lg",
+        "py-[15px] px-5 cursor-pointer data-[state=open]:hover:bg-gray-100 hover:rounded-lg my-1",
         isHovered ? 'bg-gray-100 rounded-lg' : 'hover:bg-gray-200'
     )}>
         {children}
